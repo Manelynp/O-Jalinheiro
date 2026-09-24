@@ -1,0 +1,1471 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Merienda:wght@300..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+
+:root {
+    --color-text: #4682b4;
+    --color-heading: #155c78;
+    --color-strong-text: #174a5e;
+    --color-accent: #008b8b;
+    --color-border: #87ceeb;
+    --color-border-soft: rgba(135, 206, 235, 0.7);
+    --color-glass-border: rgba(255, 255, 255, 0.25);
+    --color-surface: rgba(255, 255, 255, 0.68);
+    --color-surface-soft: rgba(255, 255, 255, 0.45);
+    --color-surface-solid: #f8fcff;
+    --color-overlay: rgba(20, 45, 65, 0.55);
+    --color-shadow: rgba(23, 74, 94, 0.14);
+    --color-danger: #8b0000;
+    --color-success: #006400;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    font-family: "Overlock", sans-serif;
+    color: var(--color-text);
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 40px;
+}
+
+h1 {
+    font-family: "Faculty Glyphic", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.marca-text {
+    font-family: "Merienda", cursive;;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.marca {
+    width: min(100%, 420px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    font-family: "Faculty Glyphic", sans-serif;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.nav-link {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nav-link a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.marca a:hover {
+    color: var(--color-accent);
+    transform: translateX(3px);
+}
+
+section {
+    width: 100%;
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h2 {
+    font-family: "Faculty Glyphic", sans-serif;
+    font-size: 2rem;
+    color: var(--color-heading);
+}
+
+
+.contenedor,
+#estadisticas {
+    width: min(90%, 1100px);
+    max-width: 1100px;
+    margin: auto;
+    padding: 28px 0 36px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* .estadisticas {
+    justify-content: space-around;
+    gap: 50px;
+} */
+
+#dashboard .contenedor {
+    justify-content: center;
+}
+
+
+#dashboard {
+    width: min(100% - 80px, 1100px);
+    max-width: none;
+    margin: auto;
+    min-height: auto;
+    padding: 28px 34px 24px;
+    gap: 0;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 24px var(--color-shadow);
+}
+
+.metric-heading h2 {
+    font-family: "Faculty Glyphic", sans-serif;
+    padding-top: 10px;
+
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.dashboard-card .metric-heading .icono {
+    color: var(--color-accent);
+    font-size: 3rem;
+}
+
+.produccion-heading .icono,
+.tablaProducciones h2 .icono {
+    font-size: 2rem;
+}
+
+.metric-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.card h3,
+h3 {
+    font-size: 1.8rem;
+    color: var(--color-heading);
+}
+
+.dashboard-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.linea {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.linea::before,
+.linea::after {
+    content: "";
+    height: 2px;
+    flex: 1;
+    background-color: var(--color-text);
+}
+
+.linea img {
+    display: block;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+}
+
+/* ========================================= TOP 5 PRODUCTORAS ========================================= */
+.estadisticas-heading { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    padding-bottom: 18px; 
+    border-bottom: 2px solid var(--color-border-soft); 
+}
+
+table,
+tr,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid var(--color-border);
+    padding: 10px;
+    text-align: justify;
+}
+
+.tablaGallinas .filaRoja td:nth-child(2) {
+    color: var(--color-danger);
+}
+
+.dashboard-card {
+    display: flex;
+    flex: 1 1 210px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    min-height: 175px;
+    max-width: none;
+    text-align: center;
+    padding: 24px 18px;
+
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#dashboard > h1,
+.estadisticas > h1 {
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--color-border-soft);
+    color: var(--color-heading);
+}
+
+#dashboard .dashboard-card + .dashboard-card {
+    border-left: 1px solid var(--color-border);
+}
+
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    
+    height: fit-content;
+    width: 100%;
+    max-width: 350px;
+    text-align: justify;
+    padding: 20px;
+    
+    border: 1px solid var(--color-border-soft);
+    border-radius: 20px;
+    background-color: var(--color-surface-soft);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+}
+
+.tablaGallinas,
+.tablaGallinasBajas,
+.tablaProducciones {
+    width: 50%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.tablaProducciones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tablaGallinas table,
+.tablaGallinasBajas table,
+.tablaProducciones table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 8px 18px rgba(47, 79, 79, 0.08);
+}
+
+.tablaGallinas th,
+.tablaGallinasBajas th,
+.tablaProducciones th {
+    background-color: var(--color-heading);
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.tablaGallinas td,
+.tablaGallinasBajas td,
+.tablaProducciones td {
+    padding: 12px 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: var(--color-strong-text);
+}
+
+.tablaGallinas tr:nth-child(even),
+.tablaGallinasBajas tr:nth-child(even),
+.tablaProducciones tr:nth-child(even) {
+    background-color: rgba(135, 206, 235, 0.08);
+}
+
+.tablaGallinas tr:hover,
+.tablaGallinasBajas tr:hover,
+.tablaProducciones tr:hover {
+    background-color: rgba(0, 139, 139, 0.08);
+}
+
+.tablaProducciones .pie_edit {
+    background-color: var(--color-heading);
+}
+
+#razas {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.razas_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+    width: 60%;
+}
+
+.razas_card .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 220px;
+    max-width: 350px;
+    min-width: 220px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.razas_card form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.razas-img {
+    width: calc(100% + 40px);
+    height: 300px;
+    margin: -20px -20px 20px;
+    overflow: hidden;
+    background-color: var(--color-heading);
+}
+
+.razas_card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.razas-img h3 {
+    width: 100%;
+    padding: 12px 78px 12px 16px;
+    background-color: rgba(20, 45, 65, 0.72);
+    color: var(--color-surface-solid);
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+
+.razas_card details {
+    width: 100%;
+    margin-top: auto;
+    cursor: pointer;
+    border-top: 1px solid rgba(135, 206, 235, 0.5);
+    padding-top: 10px;
+}
+
+.razas_card summary {
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    list-style: none;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+summary span {
+    margin: 0 5px;
+    border-radius: 50%;
+    width: 30px;
+    color: var(--color-accent);
+}
+
+.razas_card details p {
+    margin-top: 10px;
+    padding: 0 10px 0 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.2s ease;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.razas_card details[open] p {
+    max-height: 200px;
+    opacity: 1;
+    padding-top: 10px;
+    overflow-y: auto;
+}
+
+.razas_card details:hover {
+    color: var(--color-accent);
+}
+
+#modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-overlay);
+}
+
+#modal .editarGallina,
+#modal .editarBaja,
+#modal .editarRaza {
+    width: min(100%, 460px);
+    max-width: 460px;
+    max-height: 90vh;
+    padding: 20px;
+    height: fit-content;
+    overflow-y: auto;
+    background-color: var(--color-surface-solid);
+}
+
+#modal .editarRaza {
+    max-width: 500px;
+}
+
+#modal .editarGallina h2,
+#modal .editarBaja h2,
+#modal .editarRaza h3 {
+    color: var(--color-heading);
+    text-align: center;
+    line-height: 1.25;
+}
+
+.nombre-seleccionado {
+    color: var(--color-accent);
+    font-weight: 900;
+}
+
+#modal .editar > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#modal input:not([type="hidden"]),
+#modal select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    font: inherit;
+}
+
+#modal .boton {
+    width: 100%;
+    text-align: center;
+}
+
+.registrar,
+.editar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+.registrar > div,
+.editar > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.registrar label,
+.editar label {
+    font-weight: 700;
+    color: var(--color-heading);
+}
+
+.registrar input,
+.registrar select,
+.registrar textarea,
+.editar input,
+.editar select,
+.editar textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-strong-text);
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.registrar textarea,
+.editar textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.edit {
+    color: var(--color-success);
+    cursor:pointer
+}
+
+
+.edit:hover,
+.delete:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.razas-img .edit:hover {
+    color: #01d3d3;
+}
+
+.razas-img .delete:hover {
+    color: #f15858;
+}
+
+.razas_card .edit {
+    position: absolute;
+    top: 10px;
+    right: 42px;
+    z-index: 2;
+    color: var(--color-surface-solid);
+    
+}
+
+.razas_card .delete {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    z-index: 2;
+    color: var(--color-surface-solid);
+    cursor: pointer;
+}
+.tablaGallinasBajas td .delete,
+.tablaGallinas td .delete {
+    color: var(--color-danger);
+    cursor: pointer;
+}
+#delete {
+    background-color: var(--color-danger);
+    padding: 14px;
+}
+
+#delete:hover {
+    background-color: #d60404;
+}
+
+/* Producciones */
+#producciones .produccion-card {
+    /* align-items: stretch; */
+    max-width: 400px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.82);
+}
+
+#producciones .mensaje-produccion {
+    width: min(100% - 80px, 900px);
+    margin: 8px auto 0;
+    padding: 12px 16px;
+    border: 1px solid rgba(139, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.72);
+    color: var(--color-danger);
+    text-align: center;
+}
+
+.produccion-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+
+.produccion-heading h2,
+.tablaGallinas h2,
+.tablaProducciones h2,
+.card h2 {
+    color: var(--color-heading);
+    font-size: 1.45rem;
+    padding-bottom: 20px;
+}
+
+.tabla-titulo {
+    margin-bottom: 4px;
+}
+
+.tabla-titulo h2 {
+    padding-bottom: 8px;
+}
+
+.leyenda-bajas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.leyenda-bajas span {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    border-radius: 50%;
+    background-color: var(--color-danger);
+}
+
+.produccion-heading p {
+    margin-top: 5px;
+    color: var(--color-strong-text);
+    line-height: 1.4;
+}
+
+.produccion-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: grid; */
+    /* place-items: center; */
+    width: 3rem;
+    height: 3rem;
+    /* flex: 0 0 42px; */
+    border-radius: 12px;
+    /* background-color: rgba(0, 139, 139, 0.12); */
+    color: var(--color-accent);
+    font-size: 1.7rem;
+}
+
+.produccion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    padding-top: 8px;
+}
+
+.produccion-resumen {
+    width: min(100% - 80px, 900px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    margin: 1.5rem auto 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 24px var(--color-shadow);
+}
+
+.produccion-resumen .produccion-card {
+    max-width: none;
+    min-height: 230px;
+    padding: 30px 36px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.produccion-resumen .produccion-card + .produccion-card {
+    border-left: 1px solid var(--color-border);
+}
+
+.produccion-resumen .metric-heading {
+    gap: 10px;
+}
+
+.produccion-resumen .metric-heading .icono {
+    color: var(--color-accent);
+    font-size: 2.8rem;
+}
+
+.produccion-resumen .metric-heading h2 {
+    color: var(--color-heading);
+}
+
+.produccion-cantidad,
+.dashboard-card p {
+    color: var(--color-strong-text);
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.produccion-cantidad span {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.produccion-fecha {
+    color: var(--color-text);
+    font-size: 1.05rem;
+}
+
+.produccion-resumen .btn {
+    margin-top: 4px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: var(--color-heading);
+    color: #ffffff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.produccion-resumen .btn:hover {
+    background-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.estadisticas-top,
+.produccion-reciente {
+    width: min(100% - 80px, 900px);
+    align-items: stretch;
+    gap: 0;
+    margin: 2rem auto 0;
+    padding: 28px 34px 24px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 24px var(--color-shadow);
+}
+
+.estadisticas-top > .metric-heading,
+.produccion-reciente > .metric-heading,
+.estadisticas > .metric-heading {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--color-border-soft);
+}
+
+.estadisticas-heading .icono,
+.produccion-reciente > .metric-heading .icono,
+.estadisticas > .metric-heading .icono > .metric-heading .icono {
+    color: var(--color-accent);
+    font-size: 2.4rem;
+}
+
+
+.produccion-reciente > .metric-heading h2,
+.estadisticas > .metric-heading h2 {
+    padding-top: 0;
+}
+
+.estadisticas-heading h2 {
+    padding: 0;
+    color: var(--color-heading);
+    font-size: 1.45rem;
+}
+
+#estadisticas {
+    align-items: center;
+    gap: 0;
+}
+
+#estadisticas > h1 {
+    width: min(100% - 80px, 900px);
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--color-border-soft);
+    color: var(--color-heading);
+}
+
+#estadisticas > .estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100% - 80px, 900px);
+    padding: 24px 0 36px;
+    gap: 20px;
+}
+
+.estadistica-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    min-height: 190px;
+    padding: 22px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 18px;
+    background-color: var(--color-surface);
+    box-shadow: 0 10px 24px var(--color-shadow);
+}
+
+.estadistica-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--color-border-soft);
+}
+
+.estadistica-titulo .icono {
+    color: var(--color-accent);
+    font-size: 1.8rem;
+}
+
+.estadistica-titulo h2 {
+    color: var(--color-heading);
+    font-size: 1.2rem;
+    line-height: 1.25;
+}
+
+.estadistica-principal {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.estadistica-principal strong {
+    color: var(--color-heading);
+    font-family: "Faculty Glyphic", sans-serif;
+    font-size: 1.8rem;
+}
+
+.estadistica-principal span {
+    color: var(--color-text);
+    font-size: 1.05rem;
+}
+
+.estadistica-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.estadistica-fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--color-border-soft);
+}
+
+.estadistica-fila:last-child {
+    border-bottom: 0;
+}
+
+.estadistica-fila span {
+    color: var(--color-strong-text);
+}
+
+.estadistica-fila strong {
+    color: var(--color-heading);
+    text-align: right;
+}
+
+.estadistica-destacada {
+    background-color: rgba(255, 255, 255, 0.78);
+}
+
+    /* RANKING */
+.ranking-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 18px;
+}
+
+.ranking-fila {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+    padding: 12px 4px;
+
+    border-bottom: 1px solid var(--color-border-soft);
+}
+
+.ranking-fila:last-child {
+    border-bottom: none;
+}
+
+.ranking-posicion {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 32px; 
+    height: 32px; 
+    flex: 0 0 32px; 
+    border-radius: 50%; 
+    background-color: rgba(0, 139, 139, 0.1); 
+    color: var(--color-heading); 
+    font-weight: 700;
+}
+
+.ranking-nombre { 
+    width: 120px; 
+    flex: 0 0 120px; 
+    color: var(--color-strong-text); 
+    font-weight: 700; 
+}
+
+/* Barra de producción */ 
+.ranking-barra { 
+    flex: 1; 
+    min-width: 80px;
+    height: 14px; 
+    border-radius: 20px; 
+    background-color: rgba(135, 206, 235, 0.25); 
+    overflow: hidden; 
+}
+
+.ranking-barra span { 
+    display: block; 
+    height: 100%; 
+    border-radius: inherit; 
+    background-color: var(--color-accent); 
+}
+
+.ranking-fila strong { 
+    width: 90px; 
+    flex: 0 0 90px; 
+    color: var(--color-strong-text); 
+    font-size: 1rem; 
+    text-align: right; 
+}
+
+
+    /* Produccion */
+.produccion-lista,
+.top-lista {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.produccion-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 4px;
+    border-bottom: 1px solid var(--color-border-soft);
+}
+
+.produccion-fila span {
+    color: var(--color-text);
+}
+
+.produccion-fila strong {
+    color: var(--color-strong-text);
+    font-size: 1.1rem;
+}
+
+.ver-todo {
+    align-self: center;
+    margin-top: 22px;
+    padding: 10px 16px;
+    border: 1px solid var(--color-accent);
+    border-radius: 8px;
+    color: var(--color-accent);
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ver-todo:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.produccion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 120px;
+    max-width: 200px;
+    padding: 16px;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--color-border-soft);
+    border-radius: 12px;
+}
+
+.filtrar {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filtrar .fecha-produccion {
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    gap: 20px;
+}
+
+.fecha-produccion {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+}
+
+.fecha-produccion label {
+    color: var(--color-heading);
+    font-weight: 700;
+    width: 100%;
+}
+
+.fecha-produccion input,
+.fecha-produccion select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 3px solid var(--color-accent);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--color-strong-text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.fecha-produccion select {
+    min-width: 150px;
+}
+
+.registro-produccion {
+    margin: 0;
+    border: 1px solid rgba(135, 206, 235, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.registro-produccion th {
+    padding: 11px 8px;
+    text-align: center;
+}
+
+.registro-produccion td {
+    padding: 9px 7px;
+    text-align: center;
+}
+
+.registro-produccion th:first-child,
+.registro-produccion td:first-child {
+    width: 48px;
+}
+
+.registro-produccion td:nth-child(2) {
+    /* min-width: 100px; */
+    text-align: left;
+    font-weight: 700;
+}
+
+.gallina-id {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.cantidad-opcion {
+    width: 54px;
+}
+
+.cantidad-tile {
+    display: block;
+    cursor: pointer;
+}
+
+.cantidad-tile input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.cantidad-tile span {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border: 2px solid var(--color-border);
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: var(--color-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cantidad-tile:hover span {
+    border-color: var(--color-accent);
+    background-color: rgba(0, 139, 139, 0.1);
+}
+
+.cantidad-tile input:checked + span {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 139, 139, 0.25);
+    transform: translateY(-1px);
+}
+
+.cantidad-tile input:focus-visible + span {
+    outline: 3px solid rgba(0, 139, 139, 0.25);
+    outline-offset: 2px;
+}
+
+.guardar-produccion,
+.fecha-produccion .boton {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 16px;
+}
+
+
+.boton,
+input[class="boton"],
+.fecha-produccion .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 5px 8px;
+    background-color: var(--color-heading);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font: inherit;
+    font-weight: 900;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    appearance: none;
+}
+
+#delete-form .delete {
+    color: var(--color-danger);
+    cursor:pointer;
+    width: fit-content;
+    height: 100%;
+}
+
+button,
+#boton_insert {
+    border: none;
+    background: none;
+}
+
+.boton:hover,
+input[class="boton"]:hover {
+    background-color: var(--color-accent);
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 20px;
+    margin-top: 40px;
+    padding: 28px max(40px, calc((100% - 1100px) / 2));
+    border-top: 1px solid var(--color-border-soft);
+    background-color: var(--color-surface);
+    color: var(--color-strong-text);
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-marca,
+.footer-nav {
+    display: flex;
+    align-items: center;
+}
+
+.footer-marca {
+    gap: 12px;
+}
+
+.footer-marca img {
+    width: 42px;
+    height: 42px;
+}
+
+.footer-marca strong {
+    color: var(--color-heading);
+    font-family: "Merienda", cursive;
+    font-size: 1.05rem;
+}
+
+.footer-marca p,
+.footer-copyright {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-marca p {
+    margin-top: 3px;
+}
+
+.footer-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 18px;
+}
+
+.footer-nav a {
+    font-family: "Overlock", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.footer-nav a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    padding-top: 16px;
+    border-top: 1px solid var(--color-border-soft);
+    text-align: center;
+}
+
+@media (max-width: 850px) {
+    .dashboard-card {
+        flex-basis: 280px;
+    }
+
+    .tablaGallinas {
+        padding: 10px;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .tablaProducciones {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #dashboard .contenedor {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    #dashboard .dashboard-card {
+        width: 100%;
+        max-width: none;
+    }
+
+    #dashboard .dashboard-card + .dashboard-card {
+        border-top: 1px solid var(--color-border);
+        border-left: 0;
+    }
+
+    .razas_card {
+        width: auto;
+    }
+
+    .tablaGallinasBajas {
+        width: 100%;
+    }
+
+    .marca-text {
+        font-size: 2.8rem;
+    }
+
+
+}
+
+@media (max-width: 520px) {
+    footer {
+        margin-top: 28px;
+        padding: 24px 20px;
+    }
+
+    .footer-contenido {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px 22px;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    #estadisticas > h1,
+    #estadisticas > .estadisticas-top,
+    #estadisticas > .estadisticas-grid {
+        width: calc(100% - 40px);
+    }
+
+    #estadisticas > .estadisticas-grid {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+
+    .estadistica-card {
+        padding: 20px;
+    }
+
+    .estadisticas-top {
+        padding: 24px 20px;
+    }
+
+    .ranking-fila {
+        gap: 8px;
+    }
+
+    .ranking-nombre {
+        width: auto;
+        flex: 0 1 100px;
+        min-width: 0;
+    }
+
+    .ranking-barra {
+        min-width: 40px;
+    }
+
+    .ranking-fila strong {
+        width: auto;
+        flex: 0 0 auto;
+        font-size: 0.9rem;
+    }
+
+    .dashboard-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    #dashboard {
+        width: calc(100% - 40px);
+        padding: 24px 20px 20px;
+    }
+
+    #dashboard > h1 {
+        font-size: 1.8rem;
+    }
+
+    .produccion-resumen {
+        width: calc(100% - 40px);
+        grid-template-columns: 1fr;
+    }
+
+    .produccion-resumen .produccion-card {
+        min-height: 200px;
+        padding: 26px 20px;
+    }
+
+    .produccion-resumen .produccion-card + .produccion-card {
+        border-top: 1px solid var(--color-border);
+        border-left: 0;
+    }
+
+    .produccion-reciente {
+        width: calc(100% - 40px);
+        padding: 24px 20px 20px;
+    }
+
+    .produccion-reciente > .metric-heading h2 {
+        font-size: 1.05rem;
+    }
+
+    .produccion-fila {
+        gap: 12px;
+        padding: 14px 0;
+    }
+
+    .produccion-fila strong {
+        font-size: 1rem;
+    }
+
+    .tablaGallinas {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .tablaGallinas table {
+        min-width: 400px;
+    }
+}
+
+

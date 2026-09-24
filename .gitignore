@@ -1,0 +1,10 @@
+# XAMPP / local configuration
+.env
+
+# Operating system
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
